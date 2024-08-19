@@ -1,0 +1,9 @@
+[workspace]
+resolver = "2"
+members = ["stm32", "app"]
+
+[profile.dev]
+opt-level = "z"
+
+[profile.release]
+debug = 2

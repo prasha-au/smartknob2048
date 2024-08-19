@@ -1,0 +1,38 @@
+[package]
+edition = "2021"
+name = "stm32"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+
+[[bin]]
+name = "stm32"
+test = false
+
+
+[dependencies]
+embassy-stm32 = {git = "https://github.com/embassy-rs/embassy", rev = "03b8e36532427377aa01ea7dedaa97a9540e7d26", features = [ "defmt", "time-driver-tim1", "stm32g030c8", "memory-x", "unstable-pac", "exti"]  }
+embassy-sync = { git = "https://github.com/embassy-rs/embassy", rev = "03b8e36532427377aa01ea7dedaa97a9540e7d26", features = ["defmt"] }
+embassy-executor = { git = "https://github.com/embassy-rs/embassy", rev = "03b8e36532427377aa01ea7dedaa97a9540e7d26", features = ["arch-cortex-m", "executor-thread", "defmt", "integrated-timers"] }
+embassy-time = { git = "https://github.com/embassy-rs/embassy", rev = "03b8e36532427377aa01ea7dedaa97a9540e7d26", features = ["defmt", "defmt-timestamp-uptime", "tick-hz-32_768"] }
+# embassy-usb = { version = "0.2.0", default-features = false, features = ["defmt"] }
+embassy-futures = { git = "https://github.com/embassy-rs/embassy", rev = "03b8e36532427377aa01ea7dedaa97a9540e7d26" }
+embassy-embedded-hal = { git = "https://github.com/embassy-rs/embassy", rev = "03b8e36532427377aa01ea7dedaa97a9540e7d26" }
+
+defmt = "0.3"
+defmt-rtt = "0.4"
+
+cortex-m = { version = "0.7.6", features = ["inline-asm", "critical-section-single-core"] }
+cortex-m-rt = "0.7.0"
+embedded-hal = { version = "0.2.6", features=["unproven"] }
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+heapless = { version = "0.8", default-features = false }
+portable-atomic = { version = "1.5", features = ["unsafe-assume-single-core"] }
+
+
+display-interface = "0.4.1"
+display-interface-spi = "0.4.1"
+
+embedded-graphics = "0.8.0"
+gc9a01a = "0.1.1"
+
+app = { path = "../app" }
