@@ -2,12 +2,12 @@
 #![no_main]
 
 use defmt::*;
-use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, signal::Signal};
 use {defmt_rtt as _, panic_probe as _};
 
 use embassy_executor::Spawner;
 use embassy_futures::select::{select, Either};
 use embassy_stm32::{exti::ExtiInput, gpio, spi::Spi};
+use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, signal::Signal};
 use embassy_time::Delay;
 
 use display_interface_spi::SPIInterface;
