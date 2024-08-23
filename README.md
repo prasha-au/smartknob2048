@@ -19,3 +19,7 @@ More importantly, it shows:
 - `cargo run` - From within the `stm32` folder, this will build and flash the game to the smart knob with debug output.
 - `cargo test` - This will run the tests in the `app` folder.
 
+### Preview
+
+https://github.com/user-attachments/assets/8c6c43cb-74ac-46b7-8c0e-e44a3132e120
+
